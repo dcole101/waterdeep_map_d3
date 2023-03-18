@@ -1,0 +1,84 @@
+/*********/
+/* ATLAS */
+/*********/
+
+* 		{margin:0; padding:0; }
+html	{font-size:10px;}
+body	{font-family: Verdana, Arial, sans-serif; font-size:1.2rem; color:#000;}
+a:link, a:visited, a:hover {text-decoration:none;}   
+a		{color: #B80000; font-weight: bold;}
+a:hover {color: #D80000;}
+
+h1			{margin: 4px 0 4px 0; font-size:1.4rem; line-height:2.0rem; text-align:center;}
+h2			{margin: 4px 0 4px 0; font-size:1.3rem; line-height:1.6rem; text-align:left;}
+h3			{margin: 8px 0 4px 0; font-size:1.2rem; line-height:1.4rem;}
+
+div				{box-sizing:border-box; background-color:white; }
+div#bandeau		{position:fixed; width:236px; left:6px; top:6px; background-color:white; border:1px #CCC solid; padding:10px 4px 5px 4px; border-radius:8px 8px 8px 8px; z-index:20;}
+div#filtre		{display:inline;}
+div#menu		{position:fixed; width:250px; left:0px; top:0px; background-color:#F8F8F8; border:1px #CCC solid; padding:52px 6px 6px 6px; border-radius:0 0 8px 8px; z-index:12;}
+div#descr		{position:fixed; width:250px; left:0px; top:0px; background-color:#F8F8F8; border:1px #CCC solid; padding:52px 6px 6px 6px; border-radius:0 0 8px 8px; z-index:11; text-align:justify;}
+	div#txt		{background-color:#F8F8F8; }
+	div#txt	img	{border:3px solid #A8A8A8}
+	div#unset	{background-color:#F8F8F8; text-align:center; padding:6px; color:#444;}
+
+div#map			{width:100%; background-color:black; background-repeat:no-repeat;}
+div#points		{position:fixed; right:40px; bottom:35px; border:1px #CCC solid; padding:0px 8px 4px 4px; font-size:1.2rem; color:#444; z-index:16; border-radius:3px;}
+
+input#search	{width:165px; border:0; padding:5px; font-size:1.4rem; position:relative; top:-2px; outline:none;}
+
+button.subMenu	{background-color:#F8F8F8; width:240px; border:0; padding:4px; text-align:left; color:#888; font-size:1.2rem; line-height:12px; outline:none;}
+.subMenu:hover	{color:black;}
+.subMenu i		{position:relative; top:4px; font-size:2rem; width:26px; margin-right:4px; text-align:center; text-rendering: optimizeLegibility;} /* optimizeLegibility for Safari browser */
+hr 				{height:1px; color: #CCC; background-color: #CCC; width:96%; border:none; margin:10px 2% 0px 2%}
+
+button.bZone	{position:fixed; left:8px; bottom:8px; border:1px #CCC solid; border-radius:3px; z-index:17; outline:none; cursor:pointer}
+button.bZoneH	{width:60px; height:40px;}
+button.bZoneV	{width:40px; height:60px;}
+
+.icon			{position:fixed; width:26px; background-color:white; border:1px #CCC solid; font-size:1.8rem; text-align:center; outline:none; cursor:pointer; text-rendering:optimizeLegibility;} /* optimizeLegibility for Safari browser */
+div#bandeau i	{position:relative; padding-left:4px; font-size:2rem; cursor:pointer}
+#del-icon, #search-icon {float:right; position:relative; top:0px; left:-5px; color:#CCC;}
+.bZoomP		{position:fixed; right:8px;  bottom:35px; height:22px; padding-top:4px; border-radius:3px; z-index:8;  outline:none;}
+.bZoomM		{position:fixed; right:8px;  bottom:8px;  height:21px; padding-top:5px; border-radius:3px; z-index:9;  outline:none;}
+.bPoints	{position:fixed; right:40px; bottom:8px;  height:22px; padding-top:4px; border-radius:3px; z-index:10; outline:none;}
+.legend		{display:inline-block; padding:5px; border:1px #CCC solid; margin:2px 0 2px 4px; position:relative; top:4px;}
+#points	input {position:relative; top:3px; outline: none;}
+
+p, ul		{font-size:1.1rem; padding:6px 0 6px 0; color:#444}
+li			{margin-left:18px;}
+
+.gras		{font-weight:bold; }
+.center		{text-align:center; }
+.gris		{background-color:#CCC;}
+.txtgris	{color:#CCC;}
+
+/* UI Style */
+
+.ui-front{z-index:100}
+.ui-autocomplete{position:absolute;top:0;left:0;cursor:default}
+.ui-menu{list-style:none;padding:0;margin:0;display:block;outline:0}
+.ui-menu .ui-menu{position:absolute;}
+.ui-menu .ui-menu-item{margin:0;cursor:pointer;list-style-image:url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")}
+.ui-menu .ui-menu-item-wrapper{position:relative;padding:3px 1em 3px .5em}
+.ui-menu .ui-state-focus,.ui-menu .ui-state-active{margin:-1px}
+.ui-widget{font-family:Arial,Helvetica,sans-serif;font-size:1em;border:1px solid #DDD}
+.ui-state-active{border:1px solid #003eff;background:#007fff;font-weight:normal;color:#fff}
+
+/* Responsive */
+
+@media only screen and (max-width:799px) {
+	.noCel		{display:none; }
+	div#bandeau		{width:96%; left:2%;}
+	div#menu, div#descr	{width:100%}
+		div#unset	{padding:2px;}
+	input#search	{width:75%; font-size:1.8rem; padding:0px 4px 0 4px;} 
+
+	h1		{font-size:1.8rem; line-height:2.4rem;}
+	h2		{font-size:1.6rem; line-height:2.0rem;}
+	h3		{font-size:1.5rem; line-height:1.6rem;}
+	p, ul	{font-size:1.4rem;}
+	button.subMenu	{width:90%; font-size:1.4rem;}
+	.ui-widget{font-size:1.4em;}
+	.ui-menu .ui-menu-item-wrapper{padding:4px 1em 4px .5em}
+}
