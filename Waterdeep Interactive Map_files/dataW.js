@@ -11,6 +11,7 @@ const SHEET_ID = "1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68";
 const API_KEY = "AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 const SHEETS_URL = "https://sheets.googleapis.com/v4/spreadsheets/" + SHEET_ID + "/" + RANGE + "?" + "KEY"
 
+// URL to link to the spreadshett on google sheets, dont edit without being sure
 const URL = "https://sheets.googleapis.com/v4/spreadsheets/1HrfBlYWHT6MbsWo-5N2Dufr7sAZECjiTB0HsWTrAD68/values/" + RANGE + "?key=AIzaSyD_Wh9L7U8tdAa6EJAGQf3IS3fFivREXWc";
 
 $.ajaxSetup({
@@ -21,7 +22,7 @@ var groupe = [];
 var fullName = "";
 $.getJSON(URL, function(data) {
 	for(const i in data.values) {
-		fullName = guildToName(data.values[i][7]);
+		fullName = guildToName(data.values[i][9]);
 		var object = {
 			ref: data.values[i][0] || "",
 			ward: data.values[i][1] || "",
@@ -49,7 +50,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"Castle Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -58,7 +61,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"Dock Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -67,7 +72,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"North Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -76,7 +83,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"Sea Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -85,7 +94,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"South Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -94,7 +105,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"Trades Ward": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -103,7 +116,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"City of the Dead": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -112,7 +127,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	},
 	"Deepwater Harbor": {
 		"Blades of the Trentarian (Trent)": 0,
@@ -121,7 +138,10 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
+
 	}, "Outskirts": {
 		"Blades of the Trentarian (Trent)": 0,
 		"Carlstown Blasting Company (Carleton)": 0,
@@ -129,7 +149,9 @@ var wards = {
 		"The Riders of the Westernreach (Western)": 0,
 		"United Travellers Monastery (UTM)": 0,
 		"New Guildtown (Brock)": 0,
-		"The Northern Corporation (Algonquin)": 0
+		"The Northern Corporation (Algonquin)": 0,
+		"The Guild of the Broken Wagon (UOttawa)" : 0,
+		"The Wild Goose Chase (Waterloo)": 0
 	}
 }
 
@@ -151,6 +173,8 @@ function guildToName(guild) {
 	if (lowerCase == "toronto" || lowerCase == "toronto u" || lowerCase == "utm" || lowerCase == "travellers" || lowerCase == "united travellers monastery" ) return "United Travellers Monastery (UTM)";
 	if (lowerCase == "algonquin" || lowerCase == "algonquin college" || lowerCase == "northern corporation" || lowerCase == "the northern corporation") return "The Northern Corporation (Algonquin)";
 	if (lowerCase == "brock" || lowerCase == "brock u" || lowerCase == "brock university" || lowerCase == "guildtown" || lowerCase == "new guildtown") return "New Guildtown (Brock)";
+	if (lowerCase == "uottawa" || lowerCase == "ottawa u" || lowerCase == "ottawa university" || lowerCase == "broken wagon" || lowerCase == "the guild of the broken wagon") return "The Guild of the Broken Wagon (UOttawa)";
+	if (lowerCase == "waterloo" || lowerCase == "waterloo u" || lowerCase == "waterloo university" || lowerCase == "goose chase" || lowerCase == "the wild goose chase") return "The Wild Goose Chase (Waterloo)";
 	return "None";
 }
 
@@ -175,6 +199,8 @@ function guildToColour(guild) {
 	if (guild == "United Travellers Monastery (UTM)") return "#225edc";
 	if (guild == "The Northern Corporation (Algonquin)") return "#0cff00";
 	if (guild == "New Guildtown (Brock)") return "#967ac1";
+	if (guild == "The Guild of the Broken Wagon (UOttawa)") return "#660000";
+	if (guild == "The Wild Goose Chase (Waterloo)") return "#0052f5";
 	return "#424242";
 }
 
