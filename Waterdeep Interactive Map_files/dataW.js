@@ -22,7 +22,7 @@ var groupe = [];
 var fullName = "";
 $.getJSON(URL, function(data) {
 	for(const i in data.values) {
-		fullName = guildToName(data.values[i][9]);
+		fullName = guildToName(data.values[i][7]);
 		var object = {
 			ref: data.values[i][0] || "",
 			ward: data.values[i][1] || "",
